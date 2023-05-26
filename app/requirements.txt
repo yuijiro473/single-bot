@@ -1,7 +1,0 @@
-sqlalchemy
-mysql-connector-python
-streamlit
-streamlit-chat
-langchain
-openai
-python-dotenv
