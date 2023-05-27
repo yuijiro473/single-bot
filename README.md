@@ -14,9 +14,9 @@ Single-BotはOpenAI APIを活用したChatBotアプリケーションです。�
     ```
     openai.api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     ```
-4. **openaiライブラリのインストール:** 以下のコマンドをターミナルで実行し、ライブラリをインストールしてください。
+4. **ライブラリのインストール:** 以下のコマンドをターミナルで実行し、ライブラリをインストールしてください。
     ```
-    pip install openai
+    pip install -r requirements.txt
     ```
 
 ## プログラムの実行

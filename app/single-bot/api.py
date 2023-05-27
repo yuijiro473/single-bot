@@ -1,25 +1,17 @@
-from langchain.chat_models import ChatOpenAI
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationChain
+# 必要なライブラリをインポートします。
+import os
 from dotenv import load_dotenv
+import openai
 
-# 環境変数の読み込み
+# .envファイルから環境変数をロードします。これにより、OpenAIのAPIキーを安全に保管できます。
 load_dotenv()
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
-# ChatGPT-3.5のモデルのインスタンスの作成
-chat = ChatOpenAI(model_name="gpt-3.5-turbo")
-
-def init_memory():
-    # セッション内に保存されたチャット履歴のメモリの取得
-    memory = ConversationBufferMemory(return_messages=True)
-
-    return memory
-
-def api_get_response(memory, human_message):
-    # チャット用のチェーンのインスタンスの作成
-    chain = ConversationChain(llm=chat, memory=memory)
-
-    # ChatGPTの実行
-    chain(human_message)
-
-    return memory
+# チャットGPTからの応答を取得する関数を定義します。入力としてメッセージとモデルを受け取り、
+# OpenAI APIを呼び出して応答を返します。
+def get_chatgpt_response(messages):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages
+    )
+    return response['choices'][0]['message']['content']
