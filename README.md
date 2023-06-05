@@ -5,12 +5,12 @@ Single-BotはOpenAI APIを活用した単一応答型のChatBotアプリケー�
     ```
     git clone https://github.com/yuijiro473/single-bot
     ```
-2. **APIトークンの発行:** 以下の手順に沿ってOpenAIの公式サイトから、APIトークンを発行します。
+2. **APIキーの発行:** 以下の手順に沿ってOpenAIの公式サイトから、APIキーを発行します。
     1. [OpenAIの公式サイト](https://openai.com/product)にログイン
     2. 「API」を選択
     3. 右上にある自分のアイコンをクリックし、「View API keys」を選択
-    4. トークンを発行し、コピー
-3. **envファイルの設定:** 先程コピーしたトークンをenvファイルに入力してください。
+    4. キーを発行し、コピー
+3. **envファイルの設定:** 先程コピーしたキーをenvファイルに入力してください。
     ```
     openai.api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     ```
